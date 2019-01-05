@@ -3,7 +3,7 @@ import questionService from '../services/questions'
 const questionReducer = (state = [], action) => {
   console.log('ACTION: ', action)
   switch (action.type) {
-  case 'INIT_NOTES':
+  case 'INIT_QUESTIONS':
     return action.data
   default:
     return state

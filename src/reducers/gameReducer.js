@@ -9,6 +9,7 @@ const gameReducer = (state = {state:'NOT_ACTIVE', currentQuestion:0}, action) =>
 }
 
 export const newGame = (lastQuestion) => {
+  console.log('new game called')
   let newState = {state:'ACTIVE', currentQuestion:lastQuestion+1}
   return {
     type: 'NEW_GAME',
