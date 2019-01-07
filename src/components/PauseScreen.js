@@ -8,7 +8,6 @@ class PauseScreen extends React.Component {
   }
 
   render() {
-    console.log('ll', this.props.allAsked)
     return (
       <div className="text-center mt-4">
         {this.props.answer.length > 0 && <h1 className="p-4">Your answer was:</h1>}

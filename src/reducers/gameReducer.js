@@ -9,7 +9,6 @@ function shuffle(a) {
 }
 
 const gameReducer = (state = {questions:[], state:'NOT_ACTIVE', currentQuestion:-1, answer:'', correctAnswer:''}, action) => {
-  console.log('ACTION: ', action)
   switch (action.type) {
   case 'NEW_QUESTION': {
     let newState = JSON.parse(JSON.stringify(state))
@@ -45,7 +44,6 @@ const gameReducer = (state = {questions:[], state:'NOT_ACTIVE', currentQuestion:
 }
 
 export const newGame = () => {
-  console.log('new game called')
   let newState = 'ACTIVE'
   return {
     type: 'NEW_QUESTION',
@@ -54,7 +52,6 @@ export const newGame = () => {
 }
 
 export const submitAnswer = (answer='') => {
-  console.log('game ended called', answer)
   let newState = {state:'PAUSED', answer:answer}
   return {
     type: 'SUBMIT_ANSWER',

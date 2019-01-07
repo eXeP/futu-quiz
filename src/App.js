@@ -24,7 +24,6 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('app', state)
   return {
     showMenu: state.state === 'NOT_ACTIVE',
     showGame: state.state === 'ACTIVE',

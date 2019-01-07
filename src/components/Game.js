@@ -7,7 +7,6 @@ import './Game.css'
 class Game extends React.Component {
   submitAnswer = async (event) => {
   	clearTimeout(this.timerId)
-  	console.log('clear t ', this.timerId)
     event.preventDefault()
     const content = event.target.answer.value
     event.target.answer.value = ''
@@ -66,7 +65,6 @@ class Game extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('game s', state)
   return {
   	question: state.questions[state.currentQuestion],
     gameActive: state.state === 'ACTIVE'
