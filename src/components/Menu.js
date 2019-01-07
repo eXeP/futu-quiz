@@ -5,14 +5,15 @@ import { newGame } from './../reducers/gameReducer'
 const Menu = (props) => {
   return (
   	<div className="text-center mt-4">
-    	<button onClick={props.newGame} className="text-3xl bg-grey-darkest text-white pt-1 pb-1 pl-8 pr-8 border-solid border-white border-2">Play</button>
+  		<h1 className="p-4">You have 20 seconds to answer a question.</h1>
+    	<button onClick={props.newGame} className="mt-4 text-4xl bg-grey-darkest text-white pt-1 pb-1 pl-8 pr-8 border-grey-darkest hover:border-white border-2">Play</button>
     </div>
   )
 }
 
 const mapStateToProps = (state) => {
   return {
-    visible: state.state.state === 'NON_ACTIVE'
+  	state: state
   }
 }
 

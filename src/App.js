@@ -3,7 +3,8 @@ import './App.css';
 import Title from './components/Title.js'
 import Game from './components/Game.js'
 import Menu from './components/Menu.js'
-import { initializeQuestions } from './reducers/questionReducer'
+import PauseScreen from './components/PauseScreen.js'
+import { initializeQuestions } from './reducers/gameReducer'
 import { connect } from 'react-redux'
 
 class App extends Component {
@@ -14,14 +15,24 @@ class App extends Component {
     return (
       <div>
         <Title/>
-        <Menu/>
-        <Game/>
+        {this.props.showMenu && <Menu/>}
+        {this.props.showGame && <Game/>}
+        {this.props.showPause && <PauseScreen/>}
       </div>
     );
   }
 }
 
+const mapStateToProps = (state) => {
+  console.log('app', state)
+  return {
+    showMenu: state.state === 'NOT_ACTIVE',
+    showGame: state.state === 'ACTIVE',
+    showPause: state.state === 'PAUSED'
+  }
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   { initializeQuestions }
 )(App)
