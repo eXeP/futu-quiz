@@ -11,8 +11,8 @@ class PauseScreen extends React.Component {
     console.log('ll', this.props.allAsked)
     return (
       <div className="text-center mt-4">
-        <h1 className="p-4">Your answer was:</h1>
-        <h1 className="p-4">{this.props.answer}</h1>
+        {this.props.answer.length > 0 && <h1 className="p-4">Your answer was:</h1>}
+        {this.props.answer.length > 0 && <h1 className="p-4">{this.props.answer}</h1>}
         <h1 className="p-4">The correct answer is:</h1>
         <h1 className="p-4">{this.props.correctAnswer}</h1>
         {this.props.correctAnswer.length !== 0 && <h1 className="p-4">{this.props.correctAnswer === this.props.answer ? 'Good work!' : 'Better luck next time!'}</h1>}

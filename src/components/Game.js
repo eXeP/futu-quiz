@@ -51,12 +51,14 @@ class Game extends React.Component {
 	  			<p className="text-3xl">{this.props.question.question}</p>
 	  		</div>
 		  	<form onSubmit={this.submitAnswer}>
-		  		<div>
-		        	<input className="p-4 text-2xl" name="answer" />
-		        </div>
-		        <div className="mt-4">
-		        	<button className="text-3xl bg-grey-darkest text-white pt-1 pb-1 pl-8 pr-8 border-grey-darkest hover:border-white border-2">Submit</button>
-	      		</div>
+			  	<div className="flex flex-col items-center">
+			  		<div>
+			        	<input className="p-4 text-2xl" name="answer" />
+			        </div>
+			        <div className="mt-4">
+			        	<button className="text-3xl bg-grey-darkest text-white pt-1 pb-1 pl-8 pr-8 border-grey-darkest hover:border-white border-2">Submit</button>
+		      		</div>
+		      	</div>
 	      	</form>
 	    </div>)
 	}
