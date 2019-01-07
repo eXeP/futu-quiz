@@ -35,7 +35,7 @@ class Game extends React.Component {
   	if (multipleChoice) {
   		return (
 	  	<div className="flex flex-col items-center mt-4 p-4">
-	  		<div className="m-4">
+	  		<div className="sm:max-w-md text-center m-4">
 	  			<p className="text-3xl">{this.props.question.question}</p>
 	  		</div>
 	  		<div className="max-w-xl flex flex-wrap">
@@ -46,8 +46,8 @@ class Game extends React.Component {
   	}
   	else {
   		return (
-	  	<div className="text-center mt-4">
-	  		<div className="m-4">
+	  	<div className="flex flex-col items-center mt-4">
+	  		<div className="sm:max-w-md text-center m-4">
 	  			<p className="text-3xl">{this.props.question.question}</p>
 	  		</div>
 		  	<form onSubmit={this.submitAnswer}>

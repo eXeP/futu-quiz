@@ -15,7 +15,7 @@ class PauseScreen extends React.Component {
         <h1 className="p-4">{this.props.answer}</h1>
         <h1 className="p-4">The correct answer is:</h1>
         <h1 className="p-4">{this.props.correctAnswer}</h1>
-        {this.props.correctAnswer.length != 0 && <h1 className="p-4">{this.props.correctAnswer === this.props.answer ? 'Good work!' : 'Better luck next time!'}</h1>}
+        {this.props.correctAnswer.length !== 0 && <h1 className="p-4">{this.props.correctAnswer === this.props.answer ? 'Good work!' : 'Better luck next time!'}</h1>}
         <button onClick={this.props.newGame} className="mt-4 text-3xl bg-grey-darkest text-white pt-1 pb-1 pl-8 pr-8 border-grey-darkest hover:border-white border-2">{this.props.allAsked ? 'Play again': 'Next Question'}</button>
       </div>
     );
