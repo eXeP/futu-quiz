@@ -4,6 +4,14 @@ import { connect } from 'react-redux'
 import { submitAnswer } from './../reducers/gameReducer'
 import './Game.css'
 
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
 class Game extends React.Component {
   submitAnswer = async (event) => {
   	clearTimeout(this.timerId)
@@ -38,7 +46,7 @@ class Game extends React.Component {
 	  			<p className="text-3xl">{this.props.question.question}</p>
 	  		</div>
 	  		<div className="max-w-xl flex flex-wrap">
-	  			{this.props.question.choices.map(choice => 
+	  			{shuffle(this.props.question.choices).map(choice => 
 	  				<ChoiceButton onClick={this.multipleChoiceClicked(choice)} key={choice} text={choice}/>)}
 	  		</div>
 	    </div>)
